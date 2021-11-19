@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <h2>inner text / innerHTML을 이용한 요소 내용 입/출력</h2>
+
+  <p id="area1">
+    innerText : 요소에 작성된 내용을 읽거나 변경할 때 <br>
+    innerText 속성을 사용
+  </p>
+
+  <p id="area2">
+    innerHTML : 요소에 작성된 내용을 읽거나 변경할때 사용하지만<br>
+    innerText과는 다르게 요소에 작성된 태그 + 속성 + 내용을 모두 읽거나 변경 
+  </p>
+
+  <div id="area3">0</div>
+
+  <button onclick="check1();"> innerText 확인 </button>
+  <button onclick="check2();"> innerHTML 확인 </button>
+  
+  <button onclick="countFn();">count 증가</button>
+
+  <script>
+    function check1(){
+
+      const area1 = document.getElementById("area1");
+      //document : 현재 웹문서 
+      // .getElementsById : 현재 문서내의 요소를 id로 불러오기 
+      //const : 상수형 변수 
+      // const area1 : 상수 변수 area1 선언 
+      //  = : 대입 
+
+      //area1 변수에 저장된 요소에 작성된 내용만을 얻어와 출력
+      console.log(area1.innerText);
+
+      // area 변수에 저장된 요소의 내용을 변경 
+      area1.innerText = "<h3>innerText의 setter용도 사용법을 이용해 내용 변경.</h3>";
+      // h3 태그가 문자로 인식됨  -> 문자열의 태그를 인식하게 하려면 innerHTML을 사용한다
+
+      //innerText 라는 변수가 있고 여기에 대입, 출력하는 방식
+    }
+
+    function check2(){
+      const area2 = document.getElementById("area2");
+
+      console.log(area2);
+      // area2요소에 작성된 내용만 얻어와 출력
+      console.log(area2.innerHTML);
+
+      // area2.innerHTML = "<hr><h3>innerHTML를 setter로 사용하여 내용 변경<\h3>"
+      area2.innerHTML = "<input type='text' size='20'>"
+    }
+
+    function countFn(){
+      //count증가 버튼 click시 area3의 숫자1씩 증가
+
+      //1. #area3 요소 얻어오기 
+      const area3 = document.getElementById("area3");
+
+      //2.area3의 내용 얻어오기
+      const num = area3.innerText;
+
+      //3.얻어온 값 +1을 area3에 출력
+      area3.innerText = Number(num)+1;
+      //num은 문자로 인식 number로 숫자로 변환
+    }
+  </script>
+
+  <hr>
+  <h2>window.confirm("내용")</h2>
+  <button onclick="testConfirm();">confirm 확인 버튼 </button>
+
+  <div id="area4"></div>
+
+  <button onclick="testConfirm2();">confirm 확인 버튼 2</button>
+
+  <script>
+    function testConfirm(){
+      console.log(window.confirm("확인/취소 버튼중 하나를 클릭하세요."));
+      //window == 브라우저 창 
+    }
+
+    function  testConfirm2(){
+      const result = confirm("오늘 점심을 드시겠습니까?");
+
+      const area4 = document.getElementById("area4");
+      if(result){
+        area4.innerHTML = "<h4 style='color:blue'>점심 맛있게 드세요<h4>"
+      }else{
+        area4.innerHTML = "<h4 style='color:green'>1시간 후에 뵙겠습니다<h4>"
+      }
+    }
+  </script>
+
+  <hr>
+  <h2>window.prompt()를 이용한 데이터 입출력</h2>
+  <button onclick="testPrompt();">prompt 확인 버튼</button>
+  <button onclick="testPrompt2();">prompt 확인 버튼2</button>
+  <!-- 프롬프트의 취소 값은 null -->
+  <div id="area5"></div>
+  
+  <script>
+    function testPrompt(){
+      console.log(window.prompt("아무거나 입력"));
+    }
+    
+    function testPrompt2(){
+
+      const area5 = document.getElementById("area5");
+      const input = prompt("이름을 입력해 주세요.");
+      
+      if(input != null){
+
+        area5.innerHTML="<h3>" + input + "님 환영합니다. </h3>";
+      }else{
+        area5.innerHTML="<h3>취소를 클릭하였습니다.</h3>";
+      }
+    }
+  </script>
+</body>
+</html>

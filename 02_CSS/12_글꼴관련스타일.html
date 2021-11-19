@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글꼴</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+
+  <style>
+    /* 웹폰트 적용2 */
+    @font-face {
+    font-family: 'Cafe24SsurroundAir';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+    @font-face {
+        font-family: 'GmarketSansMedium';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    /* font-famliy 속성 */
+    #font-test>p:nth-child(1){ font-family: "궁서체";}
+    #font-test>p:nth-child(2){ font-family: "바탕체";}
+    #font-test>p:nth-child(3){ font-family: "";}
+
+    /* webfont */
+    #webfont-test>p:nth-child(1){
+      font-family: 'Black Han Sans', sans-serif;
+    }
+    /* webfont 2*/
+    #webfont-test>p:nth-child(2){
+      font-family: 'Cafe24SsurroundAir';
+    }
+    
+    #webfont-test>p:nth-child(3){
+      font-family: 'GmarketSansMedium';
+    }
+  </style>
+</head>
+<body>
+  <h3>font famliy: 글꼴 지정 속성 </h3>
+  <div id="font-test">
+    <p>글꼴 변경 테스트: 가나다라, abcd, 1234, 신희연</p>
+    <p>글꼴 변경 테스트: 가나다라, abcd, 1234, 신희연</p>
+    <p>글꼴 변경 테스트: 가나다라, abcd, 1234, 신희연</p>
+  </div>
+
+  <hr>
+  
+  <h3>웹폰트 사용법</h3>
+  <p> 웹 폰트 제공 사이트 1 : <a href="http://fonts.google.com" target="_blank">구글 웹폰트 사이트로</a></p>
+  
+  <div id="webfont-test">
+    <p>글꼴 변경 테스트: 가나다라, abcd, 1234, 신희연</p>
+    <p>글꼴 변경 테스트: 가나다라, abcd, 1234, 신희연</p>
+    <p>글꼴 변경 테스트: 가나다라, abcd, 1234, 신희연</p>
+  </div>
+  <br>
+  <h3> 웹폰트 제공사이트 2</h3>
+  <p><a href="https://noonnu.cc/" target="_blank">눈누 상업용 무료 한글폰트 사이트로</a></p>
+</body>
+</html>

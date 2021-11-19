@@ -1,0 +1,134 @@
+img{
+  width: 250px;
+  height: 200px;
+}
+
+/* 좌우(x축)모션 */
+.trans1:hover{
+  transform:translateX(10px);
+  -ms-transform:translateX(10px);
+  -webkit-transform:translateX(10px);
+}
+
+.trans2:hover{
+  transform:translateY(10px);
+  -ms-transform:translateY(10px);
+  -webkit-transform:translateY(10px);
+}
+.trans3:hover{
+  transform:translate(10px,10px);
+  -ms-transform:translate(10px,10px);
+  -webkit-transform:translate(10px, 10px);
+}
+
+.trans4{
+  margin-left: 20px;
+}
+
+.trans4:hover{
+  transform:scaleX(1.2);
+  -ms-transform:scaleX(1.2);
+  -webkit-transform:scaleX(1.2);
+}
+.trans5{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.trans5:hover{
+  transform:scaleY(1.2);
+  -ms-transform:scaleY(1.2);
+  -webkit-transform:scaleY(1.2);
+}
+
+.trans6{
+  margin: 20px;
+}
+
+.trans6:hover{
+  transform:scale(1.2 , 1.2);
+  -ms-transform:scale(1.2, 1.2) ;
+  -webkit-transform:scale(1.2, 1.2);
+  cursor: pointer;
+}
+
+.trans6:active{
+border: 3px solid rgba(59, 2, 52, 0.432);
+}
+
+.trans7:hover{
+  transform: rotate(90deg);
+  /* 양수 : 시계방향
+     음수 : 반시계방향  */
+}
+
+.trans1-3d:hover{
+  transform: perspective(300px) translate3d(20px,20px,-100px);
+}
+
+.trans2-3d:hover{
+  transform: perspective(300px) rotateX(45deg);
+}
+.trans3-3d:hover{
+  transform: perspective(300px) rotateY(45deg);
+}
+
+.trans4-3d:hover{
+  transform: perspective(300px) rotateZ(45deg);
+}
+
+.trans5-3d:hover{
+  transform: perspective(300px) rotate3d(1,1,1, 45deg);
+}
+
+/* transition */
+.box{
+  width: 100px;
+  height: 100px;
+  background-color: rgb(255, 181, 181);
+  border: 1px solid grey;
+  transition-duration: 0.2s;
+}
+
+.test1:hover{
+  background-color: darkred;
+}
+
+.test2:hover{
+  transform: rotate(90deg);
+}
+
+.test3:hover{
+  width: 150px;
+  height: 150px;
+  transform: rotate(90deg);
+  background-color: khaki;
+  border-radius: 50%;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+.test4:hover{
+  width: 200px;
+  height: 150px;
+  background-color: aquamarine;
+  transform: rotate(90%);
+
+  transition-property:  width, height, background-color,transform;
+  transition-duration: 0.2s,0.2s,2s,0.2s;
+}
+
+.test5:hover{
+  transition-duration: 3s;
+  transform: rotate(720deg);
+  background-color: dodgerblue;
+  
+  transition-timing-function:cubic-bezier(.29, 1.01, 0.3, -0.3);
+}
+
+.test6:hover{
+  margin-left: 400px;
+  transform: rotate(360deg);
+  transition-duration: 1s;
+  transition-delay: 1s;
+
+}

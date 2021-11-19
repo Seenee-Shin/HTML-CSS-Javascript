@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>순회 메소드 2</title>
+  <style>
+    .wrap * {
+      border: 1px solid lightgray;
+      display: block;
+      padding: 5px;
+      margin: 15px;
+      color: grey;
+    }
+
+    .type{ width: 500px;}
+  </style>
+</head>
+<body>
+  <h1> Descendants 자손 </h1>
+
+  <pre>
+    $("선택자").children([매개변수])
+      -선택된 요소의 모든 하위 요소를 반환 
+      - 매개변수가 있으면 일치하는 자식 요소만을 반환
+
+    $("선택자").find(매개변수)
+      -선택된 요소의 모든 후손 중 일치하는 요소를 모두 반환 
+  </pre>
+  
+  <div class="wrap">
+    <div class="type">div (great-grand parent)
+        <ul>ul (grand parent)
+            <li>li (direct parent)
+                <span>span</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="type">div (grand parent)
+        <p>p (direct parent)
+            <span>span</span>
+        </p>
+    </div>
+</div>
+
+  <p id="test">test</p>
+
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+    $(function(){
+      //#test 요소의 배셩색, 글자색을 green으로 변경
+      //$("#test").css("backgroundColor","green").css("color","white")
+      const testStyle = {backgroundColor : "green", color : "white"} ///JS객체
+
+      $("#test").css(testStyle)
+      //메소드의 매개변수로 객체를 전달하면 여러 스타일이 한번에 적용 된다.
+
+      const style1 ={border : "2px solid red", color : "red"}
+      const style2 ={border : "2px solid yellow", color : "yellow"}
+      const style3 ={border : "2px solid green", color : "green"}
+      const style4 ={border : "2px solid blue", color : "blue"}
+      const style5 ={border : "2px solid orange", color : "orange"}
+
+      //class : wrap의 모든 자식 1로 변경
+      $(".wrap").children().css(style1)
+
+      //ul,p태그 스타일 2로 변경
+      $(".wrap").children().children().css(style2)
+
+      //클래스가 타입인 자식요소 중 ul태그 style 3 변경 
+      $(".type").children("ul").css(style3)
+
+      //클래스가 wrap인 요소 기준으로 li태그 만을 스타일을 style4로 변경
+      $(".wrap").children(".type").children("ul").children("li").css(style4)
+
+      //find 
+      //class가 wrap인 요소 중 span태그 style5변경
+      $(".wrap").find("span").css(style5)
+    })
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이벤트 </title>
+</head>
+<body>
+  <h1>input 태그 관련 이벤트 </h1>
+  <pre>
+    focus : input태그가 선택되어 있는 경우
+
+    blur : 아웃포커싱 
+          ex)input 태그에 커서가 깜빡거리는 중 다른 곳을 클릭했을 때 
+    
+    change : input 태그의 값 또는 체크 여부가 변했을 때 
+          1) checkbox, radio, select
+          -> 값이 변하자 마자 change 이벤트 발생 
+
+          2)text 관련 input타입 (text, email, tel , url, search, number)
+          -> 입력과 동시에 값이 변했다고 인지하는 것이 아니라 포커스를 잃은 경우에 이전 값과 
+          현재값이 다르면 change 이벤트 발생
+
+    select : 요소 입력 영역에 블럭이 설정 된 경우
+  </pre>
+
+  focus / blur : <input type="text" id="focus-blur"> <br>
+
+  change 1 : <input type="checkbox" id="change1"><br>
+
+  change 2 : <input type="text" id="change2"><br>
+
+  select : <input type="text" id="select">
+
+  <hr>
+  <h1>Jquery의 on()메소드 추가 사용법 </h1>
+  <input type="text" id="on-test" size="50">
+
+  <hr>
+  <h1>동적으로 글자 수 세기</h1>
+  <div>
+    <p> <span id="counter">0</span>/150 </p>
+    <textarea id="input-content" cols="50" rows="5" style="resize:none"></textarea>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="js/10_이벤트.js"></script>
+</body>
+</html>

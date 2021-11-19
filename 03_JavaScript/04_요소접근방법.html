@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>요소 접근방법</title>
+  <style>
+    .area{
+      width: 500px;
+      height: 100px;
+      border: 1px solid black;
+    }
+
+    .div2{
+      text-align: center;
+      line-height: 100px;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>요소 접근 방법</h1>
+  <pre>
+    1. id로 요소 접근 : document.getElimentById("id");
+    2.class로 접근 : document.getElementByClassName("class");
+      -> class가 일치하는 요소를 배열로 반환 
+    3.tag 요소로 접근 : document.gerElementByTagName("tag");
+    4.name으로 요소 접근 : document.gerElementByName("name");
+    5.css선택자로 요소 접근 
+      5-1. document.querySelector("css선택자");
+      5-2. document.querySelectorAll("css선택자");
+  </pre>
+
+  <hr>
+  <h1>id 요소로 접근하기</h1>
+  <div class="area" id="div1" ></div>
+  <button onclick="accessId();">클릭마다 배경색 변경</button>
+
+  <h1>class로 요소접근하기</h1>
+  <div class="area div2"></div>
+  <div class="area div2"></div>
+  <div class="area div2"></div>
+  <button onclick="accessClass();">배경색 변경하기</button>
+
+  <hr>
+  <h1>tagName으로 접근하기 </h1>
+
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+
+  <button onclick="accessTagName();">배경색 변경하기</button>
+
+
+  <hr>
+  <h1>name으로 접근하기</h1>
+
+  <input type="checkbox" name="hobby" id="game" value="게임">
+  <label for="game">게임</label>
+
+  <input type="checkbox" name="hobby" id="music" value="음악감상">
+  <label for="music">음악감상</label>
+
+  <input type="checkbox" name="hobby" id="movie" value="영화감상">
+  <label for="movie">영화감상</label>
+
+  <br>
+
+  <input type="checkbox" name="hobby" id="coding" value="코딩">
+  <label for="coding">코딩</label> 
+  
+  <input type="checkbox" name="hobby" id="exercise" value="운동">
+  <label for="exercise">운동</label>
+
+  <input type="checkbox" name="hobby" id="book" value="책읽기">
+  <label for="book">책읽기</label>
+
+  <div class="area" id="div4"></div>
+  <button onclick="accessName();">확인하기</button>
+
+  
+  <hr>
+  <h1>css 선택자로 접근</h1>
+
+  <div class="area cls" id="div5"> test1</div>
+  <div class="area cls"> test2</div>
+  <div class="area cls"> test <span>3</span></div>
+  <button onclick="accessCss();"> 확인하기</button>
+
+  <hr>
+  <h1>input 태그의 작성된 값 얻어오기</h1>
+
+  숫자 입력 : <input type="text" id="num0">
+  <button onclick="testFn();">확인하기</button>
+
+
+  <hr>
+  <h1>간이 계산기 만들기</h1>
+  첫번째 값 : <input type="number" id="num1"> <br>
+  두번째 값 : <input type="number" id="num2"><br>
+
+  <button id="plus" onclick="cal(1);">+</button>
+  <button id="minus" onclick="cal(2);">-</button>
+  <button id="multi" onclick="cal(3);">*</button>
+  <button id="div" onclick="cal(4);">/</button>
+  <button id="per"onclick="cal(5);">%</button>
+
+  <div id="div6">
+    계산결과 : <p id="result"></p>
+  </div>
+
+  <script src="js/04_요소접근방법.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 선택자 2</title>
+  <!-- style 태그를 별도의 css파일을 연결 -->
+  <link rel="stylesheet" type="text/css" href="css/02_scc선택자.css"
+  <style>
+
+  </style>
+
+  
+</head>
+<body>
+  <h3> 기본 속성 선택자</h3>
+  <p>
+    태그에 작성된 특정 속성을 선택하는 선택자 <br>
+    <br>
+    [작성법]<br>
+    선택자[속성 = "속성명"] {css코드}<br>
+    (속성명 "" 생략가능 & '' 사용가능 )
+  </p>
+
+  <div name="n1" class="cls1"> div1</div>
+  <div name="n1"> div2</div>
+  <div name="n2"> div3</div>
+  <div name="n2" class="cls1"> div4</div>
+  <hr>
+  <h3>자손, 후손 선택자</h3>
+  <p>
+    자손 > : 바로 아래의 하위 선택자 <br>
+    후손 : 자손 보다 하위 선택자 <br>
+
+    <br>
+    [자손 선택자 작성법] <br>
+    id>요소 {} <br>
+    <br>
+    <br>
+    <br>
+  </p>
+
+  <div id="test1">
+    test1 입니다
+    <h4>test1의 자손 </h4>
+    <h4>test1의 자손? </h4>
+
+    <ul id="test2">
+      test1 자손
+      <li>list1</li>
+      <li>list2</li>
+    </ul>
+    
+  </div>
+
+  <hr>
+  <h3>반응 선택자</h3>
+  <p>
+    사용자의 움직임에 따라 달라지는 선택자 <br>
+    -사용자가 요소를 클릭하고 있는 경우(:active)
+    -사용자 요소에 마우스를 올려두는 경우 (:hover)
+  </p>
+
+  <div class="div-cls" id="div1">:active 테스트</div>
+  <div class="div-cls" id="div2">:hover 테스트</div>
+
+  <hr>
+  <h3>상태 선택자</h3>
+  <p>
+    입력 양식의 상태에 따라 선택되는 선택자 <br>
+    (focus, checked, enabled, disabled) <br>
+  </p>
+
+  <h4>:focus : 초점이 맞춰진 상태에 따른 선택자</h4>
+  <input type="text" id="text1">
+<br><br>
+
+<h4>체크박스</h4>
+
+<input type="checkbox" name="fruits" id=""> 사과 <br>
+<input type="checkbox" name="fruits" id=""> 바나나 <br>
+<input type="checkbox" name="fruits" id=""> 딸기 <br>
+<br>
+<hr>
+<h4>enabled: disabled: 선택 또는 입력을 가능/불가능으로 지정 선택자</h4>
+<br>
+비활성화 : <input type="text" id="text2" disabled value="user01"><br>
+
+활성화 : <input type="text" class="input-cls"> <br>
+비활성화 : <input type="text" class="input-cls" disabled> <br>
+<br>
+
+<hr>
+<h3>동위 선택자</h3>
+<p>
+  동위관계에서 뒤에 위치한 요소를 선택하는 선택자<br>
+  <br>
+  1)a선택자 바로 뒤에 있는 b선택자 요소 하나 선택 : a선택자 + b선택자<br>
+  2)a선택자 뒤 모든 b요소 선택 : a선택자 ~ b선택자
+</p>
+
+<div id="div-test1"> 1번 </div>
+<div id="div-test2"> 2번 </div>
+<div id="div-test3"> 3번 </div>
+<div id="div-test4"> 4번 </div>
+<p>관련없는 태그</p>
+<div id="div-test5"> 5번 </div>
+<br>
+<hr>
+<h3>checkbox에 스타일 적용</h3>
+<p>
+  label태그 , 동위선택자, input checkbox, checked상태 선택자 활용 <br>
+  label 태그 : input 태그의 제목을 정의하는 태그<br>
+  ->for 속성 : input 태그와 연결을 위한 속성
+</p>
+
+ <input type="checkbox" name="" id="cb">
+ <label for="cb"></label>
+ <br><br>
+</body>
+</html>

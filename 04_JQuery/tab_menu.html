@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tab_menu</title>
+
+  <style>
+    section:nth-child(1){
+      background-color: rgb(255, 184, 97);
+      width: 400px;
+      height: 50px;
+      border: 1px solid lightgray;
+    }
+
+
+    section>div{
+      box-sizing: border-box;
+      width: 100px;
+      height: 50px;
+      text-align: center;
+      line-height: 48px;
+      margin: 0%;
+      padding: 0%;
+      cursor: pointer;
+      float: left;
+
+    }
+
+    .tab-click{
+      background-color: rgb(255, 94, 0);
+      color: white;
+    }
+
+    .area{
+      width: 400px;
+      height: 400px;
+    }
+
+    .area > img {
+      width: 100%;
+      height: 100%;
+    }
+    
+  </style>
+</head>
+<body>
+  <section>
+    <div class="tab">1번 탭</div>
+    <div class="tab">2번 탭</div>
+    <div class="tab">3번 탭</div>
+  </section>
+
+  <section class="area"> 
+      <img src="img/cat.gif" class="content">
+      <img src="img/cute1.gif" class="content">
+      <img src="img/sibadog.gif" class="content">
+  </section>
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="js/tab_menu.js"></script>
+</body>
+</html>

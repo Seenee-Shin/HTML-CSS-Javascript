@@ -1,0 +1,113 @@
+/* 속성 선택자 
+div 태그중 name 속성 값이 n1인 요소에 css*/
+div[name="n1"]{
+  background-color: rgb(177, 127, 224);
+}
+
+.cls1[name="n2"]{
+  background-color: darksalmon;
+}
+
+/* 선택자 생략시 *모든선택자  */
+[name="n2"]{
+  color: olivedrab;
+}
+
+[class = "cls1"]{
+  font-size: 25px;
+}
+
+/* 자손 선택자 */
+#test1>h4{ 
+  background-color: rgb(126, 182, 255);
+  
+}
+#test1 > ul {
+  background-color: mediumpurple;
+}
+
+#test1 > *{
+  font-weight: bold;
+}
+
+/* 후손 선택자 */
+/* id가 test1인 후손 중 li태그 모두 선택 */
+#test1 li{ 
+  font-style: italic;
+}
+
+#test1 > ul > li {
+  color: yellowgreen;
+}
+/* 반응 선택자 */
+.div-cls {
+  width: 200px;
+  height: 200px;
+  border : 1px solid black;
+  background-color: #ccc;
+}
+
+/* 클릭하고 있을 때 반응하는 :active */
+#div1:active {
+  background-color: grey;
+  width: 198px;
+  height: 198px;
+  
+}
+/* 마우스 포인터가 올라갔을때 반응하는 :hober */
+#div2:hover{
+  background-color: rgb(255, 134, 91);
+  width: 202px;
+  height: 202px;
+  transition-duration: 0.2s;
+}
+
+/* 상태선택자 */
+/* 입력 양식에 포커스가 맞춰 졌을 떼 선택하는 :focus */
+#text1:focus{
+  background-color: rgba(228, 255, 177, 0.438);
+}
+
+/* 체크박스 선택자 :checked
+크기를 제외한 스타일은 적용되지 않는다.*/
+input[name="fruits"]:checked{
+  width: 15px;
+  height: 15px;
+}
+
+/* 활성화/ 비활성화 */
+/* 클래스중 활서화 된 요소만 선택 */
+.input-cls:enabled{background-color: lightgreen;}
+.input-cls:disabled{background-color: rgb(167, 167, 167);}
+
+/* 동위선택자 */
+/* 동위 선택자 한개 선택 */
+#div-test1 + div{
+  background-color: peachpuff;}
+
+  /* +사용시 '밀접'해 있어야 적용 가능 */
+  #div-test1 + p{
+    background-color: peachpuff;}
+
+#div-test3 ~ div{
+  background-color: thistle;}
+
+/* 체크박스 스타일 적용 */
+/* 체크박스는 inline 형식으로 크기를 지정할 수 없기 때문에 displat로 형식 변환 */
+input[type="checkbox"] + label{
+  width: 50px;
+  height: 30px;
+  border: 1px solid gray;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 10%;
+}
+/* 체크된 체크박스 바로다음 label태그 */
+input[type="checkbox"]:checked + label{ 
+  background-color: navajowhite;
+  background-image: url("outline_favorite_border_black_24dp.png");
+  background-repeat: no-repeat;
+  background-position: center;}
+
+/* 체크박스를 안보이게 설정 */
+#cb{display: none;} 

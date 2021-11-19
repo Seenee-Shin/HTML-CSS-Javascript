@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>navigator</title>
+  <style>
+    
+    
+    *:not(body,html){
+      border: 0.5px solid lightgrey;
+      box-sizing: border-box;
+    }
+    
+    .nav{
+      width: 1000px;
+      height: 40px;
+    }
+    
+    @font-face {
+    font-family: 'NEXON Lv1 Gothic OTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+    /* ul태그 패딩,마진 제거 */
+    .nav ul{
+      padding: 0;
+      margin: 0;
+      
+
+      /* 리스트표시 제거 */
+      list-style: none;
+    }
+    /* 기본 메뉴 */
+    #navi>li{
+      height: 100px;
+      width: 15%;
+      float: left;
+
+      /* 글자 정가운데 배치 */
+      text-align: center;
+      line-height: 38px;
+    }
+
+    #navi a{
+      text-decoration: none;
+      color: rgb(16, 27, 66);
+      font-weight: bold;
+      font-size: 15px;
+      font-family: 'NEXON Lv1 Gothic OTF';
+      /* 빈공간을 눌러도 클릭이 될 수 있게 a태그를 확장 
+        -> inline이기 때문에 block으로 변경 */
+      display: block;
+      width: 100%;
+    }
+
+    #navi a:hover{
+      background-color: rgb(16, 27, 66);
+      color: aliceblue;
+    }
+
+    /* 서브메뉴 에니메이션 */
+    /* 메뉴접기 */
+    #navi>li>ul {height: 0;}
+    #navi>li>ul>li{height: 0;}
+    
+    /* 서브메뉴 글자 안보이게 지정 */
+    #navi>li>ul>li>a{display: none;}
+
+    /* 마우스를 올렸을 때, 서브메뉴 표시*/
+    #navi>li:hover ul> li{
+      height: 40px;
+    }
+
+    #navi>li:hover ul> li >a {
+      display: block;
+    }
+    /* 열릴때 애니메이션 */
+    #navi>li:hover>ul>li{
+      transition-duration: 0.2s;
+    }
+
+
+
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <ul id="navi">
+      <li><a href="#">Java</a></li>
+      <li><a href="#">Oracle</a></li>
+      <li>
+        <a href="#">Frontend</a>
+        <ul>
+          <li><a href="#">HTML5</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">JS</a></li>
+          <li><a href="#">JQuery</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Server</a></li>
+      <li><a href="#">Framework</a></li>
+    </ul>
+  </div>
+</body>
+</html>

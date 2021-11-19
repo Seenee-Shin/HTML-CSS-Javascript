@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>내장객체</title>
+
+  <style>
+    #clock{
+      width: 300px;
+      height: 100px;
+      border: 1px solid black;
+      text-align: center;
+      line-height: 100px;
+      font-size: 30px;
+    }
+  </style>
+</head>
+<body>
+  <h2>날짜/시간 관련 객체 : date</h2>
+  <button id="btn1">date확인</button>
+
+  <hr>
+  <h1>window 객체</h1>
+  <pre>
+    브라우저 창 자체를 나타내는 객체
+
+    -window 객체는 자바 스크립트의 최상위 객체
+    DOM, BOM으로 나뉘어짐
+
+    DOM (document objecjt model) : document
+    BOM (browser object model) : location, history, screen, navigator
+
+    window 객체는 창 자체를 의미하므로 어디서든 접근이 가능하다. 
+    그래서 window 객체 호출부를 생략할 수 있다. 
+  </pre>
+
+  <hr>
+  <h2>window.setTiimeout(함수, 지연시간(ms))</h2>
+  <pre>함수 실행 시간 지연 </pre>
+  <button id="btn2">setTimeout 확인하기</button>
+  <button id="btn3">3초 후 사이트 이동 </button>
+  
+  <hr>
+  <h2>window.setInterval(함수, 지연시간(ms))</h2>
+  <pre>
+    지정된 지연 시간마다 함수가 반복 수행
+    문제점 : 중복되어서 사용가능, 무분별하게 여러번 호출 시 성능 저하 
+  </pre>
+  <button id="btn4">setInterval확인 </button>
+  <button id="btn5">setInterval 문제점 해결방법 1</button>
+  <button id="btn6">setInterval 문제점 해결방법 2</button>
+
+  <div id="clock"> </div>
+
+  <hr>
+  <h2>clear setInterval(setInterval이 저장된 변수)</h2>
+  <pre> setInterval의 수행 정지 </pre>
+  <div id="test">0</div>
+  <button id="test-btn1">시작</button>
+  <button id="test-btn2">종료 </button>
+
+  <hr>
+  <h2>location : 브라우저의 주소창과 관련된 객체 (BOM 객체)</h2>
+  <a href="https://vimeo.com/ko/">비메오</a>
+  <button onclick="location.href = 'https://vimeo.com/ko/';" >비메오</button>
+  
+  <hr>
+  <button onclick="location.href = location.href">새로고침 1</button>
+  <button onclick="location = location">새로고침 2</button>
+  <button onclick="location.reload()">새로고침 3</button>
+  <!-- reload : 현재 스크롤 위치에서 새로고침 -->
+  
+  <hr>
+
+  <button onclick="location.href = 'https://vimeo.com/ko/';" >비메오1</button>
+  <button onclick="location.replace('https://vimeo.com/ko/')" >비메오2</button>
+  <!--replace : 뒤로가기 버튼 사용 불가능   -->
+
+  <script src="js/11_내장객체.js"></script>
+</body>
+</html>

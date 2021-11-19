@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    code{
+      color: rgb(250, 121, 0);
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    #div1,#div2{
+      border: 1px solid black;
+      width: 50px;
+      height: 50px;
+      font-size: 30px;
+      text-align: center;
+      line-height: 48px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <h3>기본적인 함수의 선언, 정의 ,호출</h3>
+  <pre>
+    <code>
+      function 함수명(매개변수){ //<-함수선언부 
+        
+        //함수 정의 
+
+      } 
+
+      함수명(); //함수호출
+    </code>
+  </pre>
+
+  <div id="div1" onclick="clickCount();">0</div>
+  <div id="div2" onclick="clickCount2(this);">0</div>
+  <!-- this = div2 -->
+
+  <hr>
+  <h3>익명 함수</h3>
+  <pre>
+    <code>
+      function(매개변수){
+        함수정의
+      }
+    </code>
+    - 이름이 없는 함수, 호출 불가능 
+    - 이벤트 핸들러와 같이 바로 동작하는 함수가 필요한 경우 사용
+    - 변수, 매개변수에 함수를 저장해야하는 경우 사용
+
+  </pre>
+
+  <button id="btn1"> 익명함수 확인 버튼 </button>
+
+  <hr>
+  <h3>즉시 실행 함수 </h3>
+  <pre>
+    <code>
+      (function (매개변수){
+        
+        //함수정의)
+
+      })()
+      ---------------
+      (익명함수)()
+    </code>
+    익명함수의 종류 
+    함수가 정의 되자마자 바로 실행
+
+    --즉시 실행함수 사용 이유--
+
+    1. 함수 선언 ,정의, 호출 과정을 수행하지 않아도 수행 가능 (호출 없어도 실행 가능 )
+      -> 호출부가 없어 속도가 빠름 
+
+    2. 사용하려는 변수명이 전역 변수로 선언된 경우 즉시 실행함수로 변수명의 충돌 문제해결
+      -> 내부 지역변수로 작성함
+
+  </pre>
+
+  <hr>
+  <h3>화살표 함수</h3>
+
+  <pre>
+    익명함수의 표현식을 간단하게 표현한 표기법
+
+    작성법 1 : 기본
+    <code>
+    (매개변수) => {함수}
+    function(){} == () => {}
+    
+
+    익명함수 : function(num){return num*2}
+    화살표 함수 : (num)=>{return num*2}
+    </code>
+  
+    작성법 2 매개변수가 하나인 경우 ()생략가능
+
+    <code>
+      익명함수 : function(num){return num*2}
+      화살표 함수 : num =>{return num*2}
+    </code>
+
+    작성법 3 : 매개변수가 없을 경우 ()생략 불가능
+
+    작성법 4: 함수정의 부분이 return [] 으로만 작성되어 있는 경우 {},return 생략가능
+
+    작성법 5 : 함수 정의 부분이 return으로만 구성되어 있지만 return값이 객체인 경우 {},return 생략 불가능 
+  </pre>
+
+  <button id="btn2">익명 함수</button>
+  <button id="btn3">화살표 함수</button>
+
+  <hr>
+  <button id="btn4"> 매개변수가 1개인 경우 () 생략 (작성법 3) </button>
+  <button id="btn5"> 작성법 4 확인</button>
+  <script src="js/12_함수.js"></script>
+</body>
+</html>

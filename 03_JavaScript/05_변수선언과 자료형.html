@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>변수 선언과 자료형</title>
+
+  <style>
+    code{
+      font-weight: bold;
+      color: aqua;
+    }
+    #area1{
+      width: 500px;
+      height: 500px;
+      border: 1px solid grey;
+    }
+  </style>
+</head>
+<body>
+  <h1>변수 선언과 위치에 따른 구분 </h1>
+  <pre>
+    <code>
+      public class 클래스명{
+        //필드
+        private String name; ->인스턴스 변수
+        public static int code; -> static 변수, 클래스 변수
+
+        //메소드
+        public void method1(){
+          int num1 = 10; -> 지역변수
+
+          if(num1 == 10){
+            int num2 = 20; -> if문의 지역변수
+          }
+        }
+      }
+    </code>
+  </pre>
+
+  <h4>자바 스크립트 </h4>
+  <pre>
+    <code>
+      &lt;script&gt;
+
+      //var == variable == 변수 선언 구문 
+      var 변수명; // 전역변수 (같은 문서 내 선언된 이후부터 어디서든 사용가능 )
+
+      변수명; // 전역변수 
+
+      function 함수명(){
+        var 변수명; // function 지역변수
+
+        변수명; // 전역변수 
+
+        if(조건식{
+          var 변수명; // function의 지역변수
+          const 변수명; // if문의 지역변수
+          let 변수명; // if문의 지역변수
+        })
+      }
+
+      &lt;/script&gt;
+
+    </code>
+  </pre>
+  <h2>var 변수 형식은 전역 또는 function 지역변수 만을 범위로 갖는다.</h2>
+  <script>
+    // var 변수 형식의 문제점 
+    var v1 = "변수1";
+    v2 = "변수2"
+
+    if(1==1){
+      var v3 = "Script태그 바로 아래 if 문에 있는 변수"
+      v4 = "script태그 바로 아래 if 문에 있는 변수"
+    }
+
+    //v4 : 지역변수가 아닌 전역변수로 인식되기때문에 if문에 작성하여 
+    //    if문이 끝나도 script내에서 살아있다.
+
+    function test1(){
+      var v5 = "test1 내부 변수1";
+      v6 = "test2 내부 변수 1";
+
+      if(1 ==1){
+        var v7 = "test1 내부 if문 변수1";
+        v8 = "test1 내부 if문 변수 2";
+      }
+
+    }
+
+    test1();
+    
+    // ***자바스크립트는 앞선 코드에서 오류가 발생하면 나머지 뒷부분 코드가 해석되지 않는다 !
+  </script>
+
+  <script>
+    console.log(v8);
+    console.log(v6);
+    //script 태그가 분리된 상태이지만 상단 script태그에 작성된 변수를 사용가능하다. (하나의 html문서라면 사용가능)
+  </script>
+
+  <hr>
+  <h1>변수 선언 방식</h1>
+  <pre>
+    var : 변수 function level scope
+    const : 상수 block{} level scope ({}를 벗어나면 접근 불가)
+    let : const와 같이 블록레벨이나 변수
+    
+    +var변수는 변수명 중복이 가능하지만 
+    const,let은 변수명 중복이 불가능하다.
+
+    1순위 : const 
+    2순의 : let
+
+  </pre>
+
+  <script>
+    // var,const,let 확인하기
+
+    var t1 = "var 전역변수";
+    const t2 = "const 전역 변수";
+    let t3 ="let 전역변수";
+
+    //변수명 중복 확인
+    var t1 = "변경된 var 전역변수 "
+    // var는 중복 될 경우 새로운 값으오 덮어쓰기
+    // let t3 = "변경된 전역변수"
+    //let과  const는 중복 불가
+
+    //변수 값 변경 확인
+    t1="var 변수의 새로운 값"
+    t3="let 변수의 새로운 값"
+    // t2="const 상수의 새로운 값?" -> 상수에는 새로운 값을 넣을 수없다. (값변경 x)
+
+    //function level, block level 확인하기
+    function test2(){
+      if(1==1){
+        var t4 ="var - function level scope";
+        const t5 = "const - block level scope";
+        let t6 = "let - block level scope";
+      }
+
+
+      console.log(t4); //var는 function 끝나기 전 까지 사용가능 
+      console.log(t5); //cosnt {}내부에서만 사용 가능 
+      console.log(t6); // let은 {}내부에서만 사용가능 
+    }
+
+    test2();
+  </script>
+
+  <script>
+    if(1==1){
+      console.log(t1);
+      console.log(t2);
+      console.log(t3);
+    }
+  </script>
+
+  <hr><hr><hr>
+  <h1>js의 자료형</h1>
+  <pre>
+    자바스크립트는 변수 선언 시 별도의 자료형을 지정하지 않는다.
+    상수인가 변수인가만 지정. 
+    -> 변수에 대입되는 값에 의하여 변수의 자료형이 결정된다. 
+
+    -string(문자열) 
+      JS는 char자료형이 존재하지 않으므로 길이에 상관하지 않고 모두 문자열.
+      ''와 ""로 표시 가능 
+    
+    - Number (숫자)
+      정수, 실수 모두 
+
+    - boolean (논리형)
+      ture, false
+
+    - object(객체) 
+      Array, List, Set, Map, HTML요소
+
+    - function (함수)
+      const testFn = function(){}
+
+      -undefined(정의 되지 않은 변수)
+        변수 선언만하고 값 대입x
+        ex) let str;
+            console.log(str); // -undefined
+  </pre>
+
+  <button onclick="typeTestFn();">자료형 확인</button>
+  <div id="area1"></div>
+
+  <script>
+    function typeTestFn(){
+      const area1 = document.getElementById("area1");
+
+      const name = "홍길동";
+      const gender ="남";
+      const address ='서울시 중구 남대문로 120';
+
+      const age = 20; //Number 자료형
+      const height = 168.6; 
+
+      //논리형
+      const bool1 = true;
+      const bool2 = false;
+
+      //object
+      // JS 배열 초기화시 []기호
+      const arr = ['헴버거','스테이크','샌드위치']; //배열
+
+      const user ={"id" : "user01", "pw" : "pass01"}; //JS의 객체 object
+                  //K  :  V
+
+    // JS에서는 함수도 자료형이 될 수 있다.
+      const sumFn =  function(num1,num2){//익명함수
+        return num1 + num2;
+        //변수에 함수 대입 ==> 변수 자료형 == function
+
+      }
+
+      // const undef : const 는 선언과 동시에 반드시 초기화 되어야한다.
+
+      let undef; 
+      //undefined : 아무것도 대입하지 않음 
+      // 자료형을 정의할 수 없음
+
+      //////////////////////////////////////
+
+      area1.innerHTML = ""; //#area1의 작성된 이전 내용 삭제(초기화)
+      //typeof 변수명 : 해당 변수의 자료형을 확인하는 연산자 
+      area1.innerHTML += name+ "의 자료형 : " + typeof name + "<br>";
+      area1.innerHTML += gender+ "의 자료형 : " + typeof gender + "<br>";
+      area1.innerHTML += address + "의 자료형 : " + typeof address + "<br>";
+      area1.innerHTML += "<hr>"
+      area1.innerHTML += age + "의 자료형 : " + typeof age + "<br>";
+      area1.innerHTML += height + "의 자료형 : " + typeof height + "<br>";
+      
+      area1.innerHTML += "<hr>"
+      area1.innerHTML += bool1 + "의 자료형 : " + typeof bool1 + "<br>";
+      area1.innerHTML += bool2 + "의 자료형 : " + typeof bool2 + "<br>";
+      
+      //object
+      area1.innerHTML += "<hr>"
+      area1.innerHTML += arr + "의 자료형 :"+ typeof arr + "<br>";
+      area1.innerHTML += user + "의 자료형 :"+ typeof user + "<br>";
+      
+      area1.innerHTML += "arr[0] : " + arr[0] + "<br>";
+      area1.innerHTML += "arr[1] : " + arr[1] + "<br>";
+      area1.innerHTML += "arr[2] : " + arr[2] + "<br>";
+      
+      
+      area1.innerHTML += "user.id: "+ user.id + "<br>"; 
+      //user 객체 중 id key의 value 반환
+      area1.innerHTML += "user.pw: "+ user.pw + "<br>";
+      
+      area1.innerHTML += "user['id']: "+ user['id'] + "<br>";
+      area1.innerHTML += "user['pw']: "+ user['pw'] + "<br>";
+      // for.. in 구문 사용을 위해 필요
+      
+      //function
+      // 함수가 저장된 변수 호출 -> 함수코드가 반환
+      area1.innerHTML += "<hr>"
+      area1.innerHTML += sumFn + "의 자료형 : " + typeof sumFn +  "<br>";
+      
+      // 함수가 저장된 변수를 이용해 함수 수행하는 방법
+      // -> 변수명(매개변수) -> 함수가 실행
+      area1.innerHTML += "sumFn(3,5) : " + sumFn(3,5); + "<br>"
+      
+      //undefined
+      area1.innerHTML += "<hr>"
+      area1.innerHTML += undef + "의 자료형 : " + typeof undef + "<br>";
+
+      
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>빙고판 만들기</title>
+
+  <style>
+    .col{
+      width: 40px;
+      height: 40px;
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <!-- 입력받은 칸수 만큼의 가로, 세로를 가지는 빙고판 만들기 -->
+  <!-- 모든 칸의 숫자는 달라야 한다 (랜덤?) -->
+  <form action="" id="form">
+    칸 수 :
+    <input type="number" id="create">
+    <button id="btn1">생성</button>
+  </form>
+
+  <div id="board"></div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="js/빙고판만들기.js"></script>
+
+
+</body>
+</html>

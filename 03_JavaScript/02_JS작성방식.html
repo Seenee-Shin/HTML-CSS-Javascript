@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+
+  <style>
+    #test1{
+      border: 1px solid black;
+      width: 100px;
+      height: 20px;
+      text-align: center;
+      background-color: rgb(161, 161, 161);
+      color: rgb(255, 255, 255);
+      font-weight: bold;
+      display: inline-block;
+      border-radius: 5px;
+    }
+
+    #test1:hover{
+      cursor: pointer;
+    }
+
+    #test1:active{
+      background-color: rgb(192, 192, 192);
+    }
+
+  </style>
+</head>
+<body>
+  <h1>inline 방식</h1>
+  <p> 태그에 직접 간단한 코드를 작성하여 실행하는 방법</p>
+  <!-- form태그 내부 버튼이 아닌경우 type 지정이 무의미 -->
+  
+  <!-- 알림창 출력 -->
+  <button onclick="alert('버튼이 클릭 되었습니다.')"> 경고창 출력</button>
+  <button onclick="console.log('개발자도구 console에 출력');"> consol에 출력</button>
+  <div id="test1" onclick="console.log('div버튼이 클릭됨');"> div 버튼 </div>
+
+  <hr>
+  <h1>internal 방식</h1>
+  <p>HTML 문서 내부에 script태그를 선언하여 js코드 작성 ,실행 <br>
+    HTML문서 head, body 태그에 작성 가능 </p>
+  
+  <button onclick="testFn()">함수 호출버튼</button>
+  <button onclick="add(10,20)">더하기 버튼</button>
+
+
+  <pre>함수 (funtion) java의 method와 비슷
+  함수는 선언, 정의, 호출 세가지로 구분 </pre>
+  <script>
+    // funtion 함수명(매개변수){} -> 함수선언 기본형식
+
+    //함수 호출 버튼 함수
+    function testFn(){
+      for(let i=0; i<10; i++){
+        console.log(i);
+      }
+    }
+
+    // 더하기 버튼 함수
+    // 자료형이 존재하지 않는다
+    function add(num1, num2){
+      alert("두 수의 합 : " + (num1+num2));
+    }
+  </script>
+
+  <hr>
+  <h1>Extenal 방식 </h1>
+  <p>외부에 별도로 JS파일을 생성하여 연결하는 방법  </p>
+  <button onclick="sample1();">sample1</button>
+  <button onclick="sample2();">sample2</button>
+
+  //script 태그는 body태그 제일 마지막 부분에 작성 
+  <script src="js/02_js작성방식.js"></script>
+  
+</html>

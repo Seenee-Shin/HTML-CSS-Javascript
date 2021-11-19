@@ -1,0 +1,316 @@
+@font-face {
+  font-family: 'Cafe24SsurroundAir';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+*:not(body){  /* body 태그를 제외한 전체 */
+  /* border: 1px solid black; */
+  box-sizing: border-box;
+}
+
+/**** 전체 레이아웃 설정 ****/
+.container{
+  width: 1000px;
+  height: 800px;
+  margin: auto;
+}
+
+.header{
+  width: 100%;
+  height: 20%;
+}
+
+/* header 컬럼 분할 */
+.header > div{
+  float : left;
+  height: 100%;
+}
+
+.header > div:nth-child(1){ width: 15%;}
+.header > div:nth-child(2){ width: 70%;}
+.header > div:nth-child(3){ width: 15%;}
+
+
+.nav{
+  width: 100%;
+  height: 5%;
+}
+
+.content{
+  width: 100%;
+  height: 55%;
+}
+
+/* content 컬럼 분할 */
+.content > div{
+  float: left;
+  height: 100%;
+}
+
+.content > div:nth-child(1){width: 20%;}
+.content > div:nth-child(2){width: 60%;}
+.content > div:nth-child(3){width: 20%;}
+
+
+.footer{
+  width: 100%;
+  height: 20%;
+}
+
+
+/**** header 설정 ****/
+
+/* home-logo 스타일 */
+.header > div:nth-child(1){
+  position: relative;
+}
+
+#home-logo{
+  width: 70%;  
+  /* 이미지는 width 또는 height 크기만 지정한 경우 나머지를 같은 비율로 자동 조정 */
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+
+/**** 검색 폼 ****/
+.header > div:nth-child(2){
+  position: relative;
+}
+
+#search-form{
+  width: 80%;
+  height: 20%;
+  position: absolute;
+  top:0; bottom:0; left:0; right:0;
+  margin : auto;
+}
+
+#search-form > div{
+  height: 100%;
+  float: left;
+}
+
+#search-form > div:nth-child(1){ width: 80%;}
+#search-form > div:nth-child(2){ width: 20%;}
+
+#search-form > div:nth-child(1) > input[type="search"]{
+  width: 100%;
+  height: 100%;
+  font-size: 1.15em;
+  /* em : 부모 요소의 글자 크기에 대한 상대 크기 */
+}
+
+#search-form > div:nth-child(2) > button{
+  width: 100%;
+  height: 100%;
+}
+
+
+/* 로그인 폼 */
+/* 아이디, 비밀번호 입력 + 회원가입 버튼 전체를 감싸는 영역 */
+#login-area{
+  width: 100%;
+  height: 100px;
+}
+
+/* 아이디, 비밀번호 입력 form태그 */
+#login-form{
+  width: 100%;
+  height: 70%;
+}
+
+/* 회원가입, ID/PW 찾기 영역 */
+#login-area > div{
+  width: 100%;
+  height: 30%;
+
+  text-align: center; /* 글자 또는 inline 요소 가로 가운데 */
+  line-height: 28px; /* 장평 */
+}
+
+#login-area > div > a{
+  text-decoration: none;
+  color : black;
+  font-size : 1.1em; 
+  /* em : 부모 요소의 글자 크기 비례, 1em == 100% */
+}
+
+
+/* 아이디, 비밀번호 영역 + 버튼 영역 */
+#login-form > div{
+  height: 100%;
+  float : left;
+}
+
+/* #login-form 좌우 2분할 */
+#login-form > div:first-child{ width: 75%;  }
+#login-form > div:last-child{ width: 25%;  }
+
+/* 아이디, 비밀번호 입력 영역 상하 2분할 */
+#login-form > div:first-child > div{
+  width: 100%;
+  height: 50%;
+}
+
+/* 아이디, 비밀번호 input 태그 */
+#login-form > div:first-child  input{
+  width: 100%;
+  height: 100%;
+  font-size : 1.4em;
+}
+
+/* 로그인 버튼 */
+/* #login-form > div:last-child button */
+#login-form button{
+  width: 100%;
+  height: 100%;
+  font-size: 10px;
+}
+
+/* content 목록 - thumnail */
+.th-list{
+  padding: 0px;
+  margin: 10px;
+  width: 95%;
+  height: 95%;
+  /* 부모요소에 크기가 지정되지 않으면 자식 요소의 크기 지정 불가 */
+}
+
+.th-list > li{
+  width: 100%;
+  height: 25%;
+
+  list-style-type: none ;
+}
+
+/* 목록 내 자식요소들을 왼쪽 정렬 */
+.th-list>li>*{
+  float: left;
+  height: 100%;
+}
+
+/* a태그  */
+.th-list>li>a{
+  width: 25%;
+  display: block;
+  position: relative;
+  /* inline 요소가 float상태인 경우 width.height지정 가능 */
+}
+/* thumnail image */
+.th-list>li>a>img{
+  width: 90%;
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  margin: auto;
+
+}
+
+/* 제목 + 내용 */
+.title-content{
+  width: 75%;
+}
+
+/* 제목,내용 margin 제거 */
+.title-content>*{
+  margin: 0;
+  width: 100%;
+}
+
+/* 제목 영역 */
+.title-content >h4{
+  height: 25%;
+  
+}
+
+.title-content >h4>a{
+  text-decoration: none;
+  color: rgb(80, 80, 80);
+  font-family: 'Cafe24SsurroundAir';
+  
+}
+.title-content>p{
+  height: 75%;
+  font-family: 'Cafe24SsurroundAir';
+}
+
+  @font-face {
+  font-family: 'NEXON Lv1 Gothic OTF';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  }
+  /* ul태그 패딩,마진 제거 */
+  .nav ul{
+    padding: 0;
+    margin: 0;
+    /* 리스트표시 제거 */
+    list-style: none;
+    width: 100%;
+  }
+  /* 기본 메뉴 */
+  #navi>li{
+    height: 100%;
+    width: 15%;
+    float: left;
+
+    /* 글자 정가운데 배치 */
+    text-align: center;
+    line-height: 38px;
+
+    position: relative;
+  }
+
+  #navi a{
+    text-decoration: none;
+    color: rgb(16, 27, 66);
+    font-weight: bold;
+    font-size: 15px;
+    font-family: 'NEXON Lv1 Gothic OTF';
+    /* 빈공간을 눌러도 클릭이 될 수 있게 a태그를 확장 
+      -> inline이기 때문에 block으로 변경 */
+    display: block;
+  }
+
+  #navi a:hover{
+    background-color: rgb(16, 27, 66);
+    color: aliceblue;
+  }
+
+  /* 서브메뉴 에니메이션 */
+  /* 메뉴접기 */
+  #navi>li>ul {
+    height: 0;
+    position: absolute;
+    z-index: 10;
+  }
+  #navi>li>ul>li{
+    height: 0;
+  }
+  
+  /* 서브메뉴 글자 안보이게 지정 */
+  #navi>li>ul>li>a{
+    display: none;
+    background-color:white;}
+
+  /* 마우스를 올렸을 때, 서브메뉴 표시*/
+  #navi>li:hover ul> li{
+    height: 40px;
+  }
+
+  #navi>li:hover ul> li >a {
+    display: block;
+  }
+  /* 열릴때 애니메이션 */
+  #navi>li:hover>ul>li{
+    transition-duration: 0.2s;
+  }
+
+  #navi *{ border : none; }

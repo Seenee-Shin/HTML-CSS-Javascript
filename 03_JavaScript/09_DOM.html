@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM</title>
+</head>
+<body>
+  <h1>DOM (Document Object Model)</h1>
+  <pre>
+    HTML을 객체기반으로 표현한 것
+    Document{
+      DOCTYPE:html,
+      HTML:{
+        HEAD:{
+          TITLE : 문서제목,
+          STYLE : {},
+          META : {}
+        },
+        BODY:{
+          H1 : "
+          
+          제목",
+          COMMENT : "주석내용",
+          DIV:{}
+        }
+      }
+    }
+  </pre>
+  <ul id="test">
+    <!-- node확인 테스트 주석입니다. -->
+    <li id="li1">1번</li>
+    <li class="cls">2번</li>
+    <!-- 중간주석 -->
+    <li style="background-color: yellow">3번</li>
+    <li>
+      <a href="#">4번</a>
+    </li>
+
+  </ul>
+
+  <button id="btn1">확인하기</button>
+
+  <pre> 
+    childeNodes : 모든 자식 노드 리스트
+    parentNode :부모 노드리스트
+    firstChild : 첫 번째 자식 노드 
+    lastChild: 마지막 자식 노드
+    childeNodes[index] : index번째 자식 노드 선택
+    previousSibling: 이전 형제 노드
+    nextSibling : 다음 형제 노드 
+  </pre>
+  
+  <hr>
+  <h1>새로운 노드 생성 및 추가,제거</h1>
+  <div id="div1">
+
+    <div>
+      <input type="text" name="div1-input">
+      <button type="button">추가</button>
+      <!-- <button type="button" onclick="removeParent(event);">삭제</button> -->
+      <!-- <button type="button" onclick="removeParent(this);">삭제</button> -->
+    </div>
+    
+  </div>
+
+  <hr><hr>
+  <h1>node 와 element의 차이</h1>
+  <pre>
+    Node : 태그(요소 노드),속성, 주석, 내용 등을 모두 노드라고 표현함
+    Element : Node의 하위 개념으로 요소 노드만
+  </pre>
+
+  <ul id="test2">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+
+  <button id="test2-btn">확인하기</button>
+
+  <pre>
+    parentElement : 부모요소만 반환
+    children : 자식 요소만 반환
+    firstElementChild : 첫번째 자식요소 반환 (엾으면 null)
+    lastElementChild : 첫번째 자식요소 반환 (엾으면 null)
+    lastElementChild.previousElementSibling : 마지막 요소 이전의 요소`
+    firstElementChild.nextElementSibling : 마지막 요소 다음 요소 
+  </pre>
+
+  <script src="js/09_DOM.js"></script>
+</body>
+</html>

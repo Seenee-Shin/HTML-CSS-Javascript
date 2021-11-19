@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>레이아웃 스타일 4</title>
+
+  <style>
+    div{
+      border: 1px solid black;
+      box-sizing: border=border-box;
+    }
+
+  .outer{
+    border: 2px dashed red;
+    position: relative; 
+    /* 기준 */
+  }
+  .first{
+    width: 300px;
+    height: 300px;
+    background-color: yellow;
+   
+  }
+
+  .second{
+    width: 200px;
+    height:200px;
+    background-color: green;
+    position: absolute;
+
+    left: 50px;
+    top: 50px;
+  }
+  
+  .third{
+    width: 100px;
+    height:100px;
+    background-color: red;
+    position: absolute;
+    left: 100px;
+    top: 100px;
+  }
+  #ab-test{
+    position:absolute;
+    /* relrative가 없을경우 body가 기준 */
+    top: 100px;
+    left: 100px;  
+  }
+  /* 요소 정가운데 배치 */
+  #wrapper{
+    width: 300px;
+    height: 200px;
+    border: 1px solid black;
+    position: relative;
+  }
+  #center{
+    width: 100px;
+    height: 50px;
+    background-color: yellow;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin:auto;
+  }
+  /* top버튼 만들기 */
+  .fixed-area{
+    background-color: white;
+    width: 50px;
+    height: 50px;
+
+    /* 문자열 좌우 정렬 */
+    text-align: center;
+
+    /* 줄간격 */
+    line-height: 45px;
+
+    border-radius: 50%;
+
+    /* 고정된 위치에 배치 */
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+  }
+
+  .fixed-area>a{
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  </style>
+</head>
+<body id="body-top">
+  <h1>배치 관련 스타일 (position)</h1>
+  <pre>
+    position 속성을 요소의 위치를 지정하는 css속성.
+
+    position : relative;
+    - 이 스타일이 지정된 요소가 상대적으로 나타낼 수 있는 다른 요소의 기준이 됨.
+      (자기 자신이 기분이 되어 다른 요소의 위치를 배치함 )
+    - top, bottom, left, right 속성을 이용할 수 있게됨
+      (relative가 설정된 요소의 자식이 사용가능)
+
+    position : absolute; (절대적)
+    - 기본 요소의 배치 순서를 무시하고 지정된 절대 위치에 요소를 배치함
+
+    position : fixed; (고정)
+    - 브라우저 창을 기준으로 항상 고정된 위치에 요소를 배치함
+
+  </pre>
+
+  <div class="outer">
+    <div class="first">first</div>
+    <div class="second">second</div>
+    <div class="third">third</div>
+  </div>
+
+  <div class="third" id="ab-test">absolute 테스트</div>
+
+  <hr>
+  <h1>요소 정가운데 배치하기</h1>
+  <div id="wrapper">
+    <div id="center"></div>
+  </div>
+
+  <hr>
+  <!-- top버튼 만들기 -->
+  <div class="fixed-area">
+    <a href="#body-top">top</a>
+  </div>
+</body>
+</html>

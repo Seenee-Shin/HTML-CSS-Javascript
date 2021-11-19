@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>변형관련 스타일</title>
+  <link rel="stylesheet" type="text/css" href="css/13_변형관련스타일.css">
+</head>
+<body>
+  <h1>2차원 변형</h1>
+  <h4>하나의 요소에는 하나의 transform만 적용된다</h4>
+  <h3>좌우 모션</h3>
+  <img src="image/flower1.PNG" class="trans1">
+  
+  <h3>상하 모션</h3>
+  <img src="image/flower2.PNG" class="trans2">
+
+  <h3>대각선</h3>
+  <img src="image/flower3.PNG" class="trans3">
+  
+  <h3> scale </h3>
+
+  <h4>좌우 스케일</h4>
+  <img src="image/flower4.PNG" class="trans4">
+
+  <h4>상하 스케일</h4>
+  <img src="image/flower5.PNG" class="trans5">
+  
+  <h4> 전체 스케일</h4>
+  <img src="image/city1.PNG" class="trans6">
+  
+  <h3> 회전 </h3>
+  <img src="image/river1.PNG" class="trans7">
+ 
+  <hr>
+  <hr>
+  <h1>3차원 변형</h1>
+  <p>원근법 적용을 위해  perspective 적용</p>
+  <h3>x,y,z 축 이동 </h3>
+  <img src="image/flower1.PNG" class="trans1-3d">
+  
+  <h3>x축 회전 </h3>
+  <img src="image/flower2.PNG" class="trans2-3d">
+  
+  <h3>y축 회전 </h3>
+  <img src="image/flower3.PNG" class="trans3-3d">
+  
+  <h3>z축 회전 </h3>
+  <img src="image/flower4.PNG" class="trans4-3d">
+  
+  <h3>전체축 회전 </h3>
+  <img src="image/flower5.PNG" class="trans5-3d">
+  
+  <hr><hr>
+  <h1> transition</h1>
+  <div class="box test1"> </div>
+  <hr>
+  <div class="box test2"> </div>
+  <hr>
+  <div class="box test3"> </div>
+  <hr>
+  스타일별 진행속도 지정 
+  <div class="box test4"> </div>
+  
+  <div class="box test5"> </div>
+  <pre>
+    linear : 일정한 속도
+    ease : 기본값 가속 -> 감속 
+    ease-in : 가속
+    ease-out :  감속
+    ease-in-out : 가속 후 감속 (0.42,0,0.58,1) 
+    cubic-bezier(n,n,n,n)
+  </pre>
+  
+  <hr>
+  <h3>지연부여 </h3>
+  <div class="box test6"> </div>
+
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <input type="checkbox" name="search" id="checkall" class= 'title'> 전체
+  <input type="checkbox" name="search" id="checkuser" class="title"> 사용자
+  <input type="checkbox" name="search" id="checkexpert" class="title"> 전문가
+  
+  <hr>
+  <input type="checkbox" name="search" class="all user"> 사용자  <br>
+  <input type="checkbox" name="search" class="all expert"> 전문가<br>
+  <input type="checkbox" name="search" class="all expert"> 전문가<br>
+  <input type="checkbox" name="search" class="all user"> 사용자<br>
+
+  
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+    $('#checkall').on('change',function(){
+      if($('#checkall').prop('checked')){
+        $('.all').prop('checked',true)
+        $('.title').prop('checked',true)
+      } else{
+        $('.all').prop('checked',false)
+        $('.title').prop('checked',false)
+      }
+    })
+
+    $('#checkuser').on('change',function(){
+      if($('#checkuser').prop('checked')){
+        $('.user').prop('checked',true)
+      }else{
+        $('.user').prop('checked',false)
+      }
+    })
+
+    $('#checkexpert').on('change',function(){
+      if($('#checkexpert').prop('checked')){
+        $('.expert').prop('checked',true)
+      }else{
+        $('.expert').prop('checked',false)
+      }
+    })
+
+    $('.title').on('change',function(){
+      if($('#checkuser').prop('checked')&&$('#checkexpert').prop('checked')){
+        $('#checkall').prop('checked',true)
+      }else{
+        $('#checkall').prop('checked',false)
+      }
+    })
+  </script>
+</body>
+</html>

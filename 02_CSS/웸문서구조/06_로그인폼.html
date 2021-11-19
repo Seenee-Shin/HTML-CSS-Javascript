@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login form</title>
+  <style>
+    *:not(body,html){
+      border: 0.5px solid black;
+      box-sizing: border-box;
+    }
+    .content-3{
+      width: 200px;
+      height: 440px;
+    }
+
+    #login-area{
+      width: 100%;
+      height: 100px;
+    }
+
+    #login-form{
+      width: 100%;
+      height: 70%;
+    }
+
+    #login-area > div{
+      width: 100%;
+      height: 30%;
+
+      text-align: center;
+      line-height: 28px;
+    }
+    #login-area > div > a{
+      text-decoration: none;
+      color: black;
+      font-size: 1.1em;
+    }
+
+    /* 로그인 정보 입력 & 버튼영역 나란히 */
+    #login-form>div{
+      height: 100%;
+      float: left;
+    }
+
+    #login-form>div:first-child{width: 75%;}
+    #login-form>div:last-child{width: 25%;}
+
+    /* 로그인정보 입력란 2분할 */
+    #login-form>div:first-child>div{
+      width: 100%;
+      height: 50%;
+    }
+    
+    /* 아이디, 비밀번호 input태그 입력 */
+    #login-form>div:first-child>div>input{
+      width: 100%;
+      height: 100%;
+      font-size: 1.1em;
+    }
+
+    #login-form button{
+      width: 100%;
+      height: 100%;
+      font-size: 10px;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="content-3">
+    <div id="login-area">
+      <!-- 로그인창 -->
+      <form id="login-form">
+        <!-- 로그인정보입력 -->
+        <div>
+          <div><input type="text" name="inputId"></div>
+          <div> <input type="password" name="inputPw"> </div>
+        </div>
+
+        <!-- 로그인버튼 -->
+        <div>
+          <button>로그인</button>
+        </div>
+      </form>
+
+      <!-- 회원가입, 정보찾기 -->
+      <div>
+        <a href="#">회원가입</a>
+        <a href="#">ID/PW찾기</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
