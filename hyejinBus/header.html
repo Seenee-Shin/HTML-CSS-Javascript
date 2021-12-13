@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>favorites</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+
+    <!-- 추가 css -->
+    <link rel="stylesheet" type="text/css" href="css/reserve.css">
+
+</head>
+<body>
+<!-- modal (close : layer_popup)-->
+<div class="modal"></div>
+    
+<!-- side menu -->
+<div class="side_menu">
+    <div class="bg_yellow login_area">
+        <div class="close_menu"><img src="images/header/right_arrow.png"></div>
+        <a href="javascript:alert('로그인')">
+            <div class="profile_area">
+                <div class="profile_img">
+                    <img src="images/header/defaultUser.jpg">
+                </div>
+                <div class="profile_txt">
+                    <strong>로그인/회원가입</strong>
+                </div>
+                <!-- 로그인 시 -->
+                <!-- <div class="profile_txt login">
+                    <div class="nickname"><strong>닉네임</strong></div>
+                    <div class="amend"><strong>프로필 관리</strong></div>
+                </div>  -->
+               
+            </div>
+        </a>
+    </div>
+
+    <div class="used_area">
+        <div>
+            <a href="javascript:alert('예약리스트')">
+                <div>
+                    <img src="images/header/ico_reservationlist.png" class="ico">
+                    <div>예약 리스트</div>
+                </div>
+            </a>
+        </div>
+        <div>
+            <a href="javascript:alert('예약리스트')">
+                <div>
+                    <img src="images/header/ico_manage.png" class="ico">
+                    <div>
+                        이용후기<br>Q&amp;A관리
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div>
+            <a href="javascript:alert('찜한공간')">
+                <div>
+                    <img src="images/header/ico_zzim.png" class="ico">
+                    <div>찜한공간</div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="plan_area bg_purple">
+        <a href="javascript:alert('기획전');"><div class="plan_txt">이달의 기획전</div></a>
+    </div>
+
+    <div class="notice_area" id="notice">
+        <ul>
+            <li data-url="home">
+                스페이드클라우드 홈
+            </li>
+            <li data-url="공지사항">
+                공지사항
+            </li>
+            <li data-url="도움말">
+                도움말
+            </li>
+            <li data-url="1:1문의">
+                1:1문의
+            </li>
+            <li data-url="service">
+                서비스 정보
+                <ul class="service_sub">
+                    <li data-url="introduction"> - 서비스 소개</li>
+                    <li data-url="terms"> - 이용약관</li>
+                    <li data-url="privacy"> - 개인정보처리방침</li>
+                    <li data-url="operate"> - 운영정책</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- header랑 side_menu는 변경 가능성이 있습니다. -->
+<header>
+    <div class="logo_area">빌려주오</div>
+    <div class="search_area">
+        <img src="images/header/search-gray.png" class="ico_search">
+        <img src="images/header/search-cancel.png" class="ico_cancel">
+        <input type="text" class="input search" placeholder="지역, 공간유형, 공간명으로 찾아보세요">
+    </div>
+    <div class="menu_area">
+        <img src="images/header/menu.png" class="ico_menu">
+    </div>
+</header>
+
+<footer></footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="js/common.js"></script>
+
+</body>
+</html>
