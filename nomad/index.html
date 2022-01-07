@@ -4,12 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Momentum</title>
-  <link rel="stylesheet" type="text/css" href="/nomad/style.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <div class="hello">
-    <h1 >Grab me!</h1>
-  </div>
-  <script src="/nomad/websiteClone.js"></script>
+  <form id="login-form" >
+    <input type="text" placeholder="What is your name?" required maxlength="15">
+    <button>Log In</button>
+  </form>
+
+  <h1 id="greeting" class="hidden"></h1>
+
+  <script src="websiteClone.js"></script>
 </body>
 </html>
