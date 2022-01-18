@@ -1,4 +1,8 @@
 /* css reset */
+*:not(body,html){
+    /* border: 0.1px solid grey; */
+    box-sizing: border-box;
+    }
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -48,6 +52,7 @@ hr{
 }
 
 
+
 /* ----------- 눌러눌러 버튼버튼 ---------- */
 
 /*--------------- 색깔 색깔----------------  */
@@ -58,12 +63,13 @@ hr{
     color: #E5D4C5;
 }
 
+
+/* ---------------------규격------------------- */
 .main_wrap{
     width: 70%;
     margin-left: 15%;
     margin-right: 15%;
 }
-
 
 .side_menu{
     width: 25%;
@@ -71,17 +77,21 @@ hr{
     min-height: 300px;
     background-color:  #F8F8F8;
     float: left;
+    box-sizing: border-box;
 }
 
 .main_content{
     width: 75%;
-    height: 200px;
+    min-height: 500px;
     float: left;
 }
 
 .footer_wrap{
+    width: 100%;
+    height: 100PX;
     clear: both;
-    
+    line-height: 98px;
+    text-align: center;
 }
 
 /* ------------ 헤더 메뉴 (웹 ) ------------------ */
@@ -89,6 +99,8 @@ hr{
     width: 100%;
     height: 100px;
     border-bottom: 1px solid #ededed;
+    padding-left: 15%;
+    padding-right: 15%;
 }
 
 .header_logo_wrap{
@@ -101,7 +113,9 @@ hr{
     font-weight: 550;
 }
 
-
+.menu_toggle{
+    display: none;
+}
 
 a{
     text-decoration: none;
@@ -112,6 +126,8 @@ a{
     float: left;
     text-align: right;
     width: 70%;
+    position: relative;
+
 }
 
 .header_menu_wrap >.dep1{
@@ -121,22 +137,31 @@ a{
 
 .header_menu_wrap .dep1 > li{
     display: inline-block;
-    width:14%;
+    width:17%;
     vertical-align: top;
     font-size: 15px;
     text-align: center;
     cursor: pointer;
+    position: relative;
 }
+
+.header_menu_wrap .dep1 > li>ul{
+    position: absolute;
+    width: 100%;
+}
+@media (hover: hover) {
 .header_menu_wrap .dep1 > li:hover > a{
     color: #A59999;
-}
+}}
+
+@media (hover: hover) {
 .header_menu_wrap .dep1 > li:hover > .dep2{
     display: block;
-
-}
+}}
 .header_menu_wrap .dep1 > li > a{
-    display: block;
+    display: inline-block;
     padding: 10px 0;
+
 } 
 
 .header_menu_wrap .dep2{
@@ -156,15 +181,15 @@ a{
 .headermenu_togle{
     display: none;
     position: absolute;
-    top: 27px;
+    top: -64px;
     right: 34px;
     font-size: 24px;
     color: #A59999;
 }
 .headermenu_bell{
     position: absolute;
-    top: 15px;
-    right: 34px;
+    top: 55px;
+    right: -20px;
     font-size: 22px;
     color: #A59999;
     margin-right: 10px;
@@ -202,6 +227,7 @@ a{
     .header_wrap{
         width: 100%;
         height: 100px;
+        padding: 0%;
     }
     .header_logo_wrap{
         width: 70%;
@@ -217,6 +243,17 @@ a{
     }
     .header_menu_wrap .dep1>li{
         width: 100%;
+        position: initial;
+        margin-left: 40px;
+        text-align: left;
+        font-size: 17px;
+    }
+    .header_menu_wrap .dep1 > li>ul{
+        position: initial;
+        margin-left: 20px;
+        font-size: 15px;
+        font-weight: 500;
+
     }
     .headermenu_togle{
         display: block;
@@ -229,7 +266,7 @@ a{
     }
     .headermenu_bell{
         position: absolute;
-        top: 27px;
+        top: -64px;
         right: 70px;
         font-size: 24px;
         color: #A59999;
@@ -238,6 +275,7 @@ a{
     .main_wrap{
         width: 100%;
         margin: 0%;
+        padding: 0%;
     }
      /* ----- 사이드 메뉴------ */
     .side_menu{
@@ -245,13 +283,25 @@ a{
         min-height: 50px;
         background-color:  #F8F8F8;
         clear: both;
+
     }
+
+    .menu_toggle{
+        display: inline-block;
+        font-size: 30px;
+        right: 30px;
+        position: absolute;
+    }
+    
     /* ----- 사이드 메뉴------ */
     
     .main_content{
         width: 100%;
         height: 200px;
         clear: both;
+    }
+    .side_menu{
+        display: none;
     }
 }
 
