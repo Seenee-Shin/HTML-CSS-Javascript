@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../common.css">
+    <link rel="stylesheet" type="text/css" href="css/comunity_worry_list.css">
+    <!-- 아이콘 -->
+    <script src="https://kit.fontawesome.com/5e0a99db98.js" crossorigin="anonymous"></script>
+
+    <!-- 글꼴 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <!--                    
+    1. 태그는 되도록이면 section -> article -> div 순으로 작성해 주세요! 
+    2. html,css, js 모두 tab(띄어쓰기)은 4칸입니다. 
+    3. common.css에 기본 적인 폰트, 버튼, 컬러 클래스가 작성되어있습니다. 
+    4. 만약 와이어프레임이 정확하지 않거나 헷갈리는 부분은 피그마에서 확인 후 단톡에 질문해 주세요
+    5.  width는 %로 정해줍니다.
+    -->
+
+    <header> 
+    <!-- 헤더 -->
+        <section class="header_wrap">
+            <article class="header_logo_wrap">
+                <img src="" alt="">
+            </article>
+
+
+            <!-- 헤더 메뉴 -->
+            <article class="header_menu_wrap">
+                <ul class="dep1">
+                    <li>
+                        <a href="#">공지사항</a> <p class="menu_toggle">+</p>
+
+                    </li>
+                    <li>
+                        <a href="#">상담예약</a> <p class="menu_toggle">+</p>
+                        <ul class="dep2">
+                            <li><a href="#">상담사 찾기</a></li>
+                            <li><a href="#">상담센터 찾기</a></li>
+                            <li><a href="#">자가진단</a></li>
+                        </ul>
+
+                    </li>
+                    <li>
+                        <a href="#">커뮤니티</a> <p class="menu_toggle">+</p>
+                        <ul class="dep2">
+                            <li><a href="#">자유게시판</a></li>
+                            <li><a href="#">고민상담 게시판</a></li>
+                            <li><a href="#">마인드 포스팃</a></li>
+                            <li><a href="#">털어놓기</a></li>
+                        </ul>
+                    </li>
+
+                    <li><!-- 로그인 안했으면 로그인 버튼 -->
+                        <!-- <a href="">로그인</a> -->
+                        <a href="#">마이페이지</a> <p class="menu_toggle">+</p>
+                        <ul class="dep2">
+                            <li><a href="#">감정기록</a></li>
+                            <li><a href="#">마이 상담</a></li>
+                            <li><a href="#">마이 활동</a></li>
+                            <li><a href="#">마이 정보</a></li>
+                        </ul>
+                    </li>
+                    <li ><!-- 로그인 했으면 로그아웃 버튼 보이기
+                            로그인 안했으면 회원가입 -->
+                        <!-- <a href=""> 회원가입 </a>  -->
+                        <a href="#">로그아웃</a>
+                    </li>
+                </ul>
+                <a href="#" class="headermenu_togle">
+                    <i class="fas fa-bars"></i>
+                </a>
+                <a href="#" class="headermenu_bell">
+                    <i class="far fa-bell"></i>
+                </a>
+            </article>
+        </section>
+    </header>
+
+    <main>
+        <div class="main_wrap">
+            <!-- 사이드 메뉴가 없는 부분은 지우고 사용 -->
+            <section class="dark-brown side_menu">
+                <h3>커뮤니티</h3>
+                <hr>
+                <ul class="side_menu_dep1">
+                    <li class="w_side_menu"><a href="#">자유게시판</a></li>
+                    <li class="m_side_menu"><a href="#">자유</a></li>
+                    <li class="w_side_menu"><a href="#">고민상담 게시판</a> </li>
+                    <li class="m_side_menu"><a href="#">고민상담</a></li>
+                    <li class="w_side_menu"><a href="#">마인드포스팃</a></li>
+                    <li class="m_side_menu"><a href="#">포스팃</a></li>
+                    <li class="w_side_menu"><a href="#">털어놓기</a></li>
+                    <li class="m_side_menu"><a href="#">털어놓기</a></li>
+                </ul>
+            </section>
+
+            <section class="main_content">    
+                <!-- 메인 -->
+                <div  class="comunity_title">
+                    <h3>고민을 나눠보면 어떨까요?</h3>
+                    <p> 회원분들과 전문가분들이 여러분을 도와주실거에요.</p>
+                    <button id="openModal" class="submit_btn"> 고민 작성하기 </button>
+                </div>
+                
+
+                <form action="/list" method="post" onsubmit="return ostingValidate()">
+                    
+                    <div class="search_area">
+                        <div class="qna_category" >
+                            <button class="submit_btn dark_brown_bg" >카테고리</button>
+
+                        </div>
+                    
+                        <div class="search_wrap">
+                            <select name="search_category" id="search_category">
+                                <option value="">아이디</option>
+                                <option value="">내용</option>
+                            </select>
+                            <input type="text" name="freeboard_search">
+                            <button class="submit_btn light_brown_bg"> 검색 </button>
+                        </div>
+                    </div>
+
+                    <!-- 글작성 모달창 -->
+                    <div class="modal hidden">
+                        <div class="modal_overlay"></div>
+                        <div class="board_write_warp">
+                            <div id="free_board_write">
+                                <i id="closeModal" class="fas fa-times"></i>
+                                <h4>고민 작성하기</h4>
+
+                                <div class="worry_category_wrap">
+                                    <p>카테고리</p>
+                                    <div class="worry_category">
+
+                                        <div class="check_box_wrap">
+                                            <label for="normal" class="dark-brown dark_brown_border"> 
+                                                일반고민
+                                                <input type="radio" id="normal" name="worryCategory" value="normal">
+                                            </label>
+                                        </div>
+                                        <div class="check_box_wrap">
+                                            <label for="normal" class="dark-brown dark_brown_border"> 
+                                                일반고민
+                                                <input type="radio" id="normal" name="worryCategory" value="normal">
+                                            </label>
+                                        </div>
+                                        <div class="check_box_wrap">
+                                            <label for="normal" class="dark-brown dark_brown_border"> 
+                                                일반고민
+                                                <input type="radio" id="normal" name="worryCategory" value="normal">
+                                            </label>
+                                        </div>
+                                        <div class="check_box_wrap">
+                                            <label for="normal" class="dark-brown dark_brown_border"> 
+                                                일반고민
+                                                <input type="radio" id="normal" name="worryCategory" value="normal">
+                                            </label>
+                                        </div>
+                                        <div class="check_box_wrap">
+                                            <label for="normal" class="dark-brown dark_brown_border"> 
+                                                일반고민
+                                                <input type="radio" id="normal" name="worryCategory" value="normal">
+                                            </label>
+                                        </div>
+                                        <div class="check_box_wrap">
+                                            <label for="normal" class="dark-brown dark_brown_border"> 
+                                                일반고민
+                                                <input type="radio" id="normal" name="worryCategory" value="normal">
+                                            </label>
+                                        </div>
+                                        <div class="check_box_wrap">
+                                            <label for="normal" class="dark-brown dark_brown_border"> 
+                                                일반고민
+                                                <input type="radio" id="normal" name="worryCategory" value="normal">
+                                            </label>
+                                        </div>
+
+                                        
+
+                                    </div>
+                                </div>
+
+                                <div class="writing">
+                                    <textarea class="grey_bg" name="" id="post_textarea" rows="15" placeholder="무슨 고민이 있나요?"></textarea>
+                                </div>
+                            </div>
+                            
+                            <div class="write_option_area">
+                                <div class="check_box_wrap">
+                                    <label for="comment" class="light_brown_bg white">댓글허용
+                                        <input type="checkbox" id="comment" name="write_option" value="comment">
+                                    </label>
+                                </div>
+
+                                <div class="check_box_wrap">
+                                    <label for="scrap" class="light_brown_bg white">스크랩허용
+                                        <input type="checkbox" id="scarp"  name="write_option" value="scarp">
+                                        
+                                    </label>
+                                </div>
+                                
+                                <div class="check_box_wrap">
+                                    <label for="like" class="light_brown_bg white"> 공감 허용
+                                        <input type="checkbox" id="like"  name="write_option" value="like">
+
+                                    </label>
+                                </div>
+                                
+                            </div>
+                            
+                            <hr>
+                            <div class="btn_area">
+                                <a>
+                                    <i class="fas fa-image dark-brown"></i>
+                                </a>
+                                <button class="submit_btn light_brown_bg">작성</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <article id="free_borad_wrap">
+
+                    <!-- 게시판 리스트 -->
+                    <div class="free_board_list_wrap">
+
+                            <!-- 게시판 하나 시작  -->
+                            <div class="board_list_content">
+                                <!-- 프로필 시작 -->
+                                <div class="board_flex_wrap">
+                                    <div class="writer_pic_wrap">
+                                        <div class="writer_pic light_brown_bg" style="background-image: url();">
+                                        </div>
+                                    </div>
+
+                                    <!-- 포스트 시작 -->
+                                    <div class="posting_info">
+                                        <div class="writer_id">
+                                            <p>아이디</p> 
+                                            <p> 5분전</p>
+                                        </div>
+                                        <div class="posting">
+                                            <p>저는 오늘 마라탕을 시켰는데요 마라마라마라탕~~~ </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="board_icon_wrap">
+                                    <!-- 댓글 아이콘 -->
+                                    <div class="commnet_wrap">
+                                        <i class="far fa-comment dark-brown"></i>
+                                        <p>3</p>
+                                    </div>
+    
+                                <!-- 공감수 표시 -->
+                                    <div class="like_warp">
+                                        <img src="img/smile.png" alt="">
+                                        <p>2</p>
+                                        <img src="img/hug.png" alt="">
+                                        <p>2</p>
+                                        <img src="img/amazed.png" alt="">
+                                        <p>2</p>
+                                        <img src="img/angry.png" alt="">
+                                        <p>2</p>
+                                        <img src="img/crying.png" alt="">
+                                        <p>2</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                    </div>
+
+                </article>
+            
+            </section>
+        </div>
+
+
+    
+    </main>
+
+    <footer>
+    <!-- 푸터 -->
+    <section class="footer_wrap">
+        <article>
+            <p>Copyright © KH Information Educational Institute A-Class</p>
+        </article>
+    </section>
+    </footer>
+    <script src="js/common.js"></script>
+    <script src="js/comunity_worry_board.js"></script>
+</body>
+</html>
