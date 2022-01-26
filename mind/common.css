@@ -67,6 +67,7 @@ input[type='radio']:checked {background:url('../images/icon/radio_active.png') n
 
 /* ----------- 눌러눌러 버튼버튼 ---------- */
 
+
 /*--------------- 색깔 색깔----------------  */
 .dark-brown{
     color: #A59999;
@@ -97,12 +98,15 @@ input[type='radio']:checked {background:url('../images/icon/radio_active.png') n
 }
 
 
-.main_wrap{
-    width: 70%;
-    margin-left: 15%;
-    margin-right: 15%;
+main{
+    width: 80%;
+    max-width:1200px;
+    margin:auto;
 }
 
+.main_wrap{
+    width: 100%;
+}
 /* ---------------------------------------- */
 .side_menu{
     width: 25%;

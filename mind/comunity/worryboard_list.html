@@ -112,20 +112,70 @@
                 
 
                 <form action="/list" method="post" onsubmit="return ostingValidate()">
-                    
-                    <div class="search_area">
-                        <div class="qna_category" >
-                            <button class="submit_btn dark_brown_bg" >카테고리</button>
-
+                    <div class="worry_top_wrap">
+                        <div class="worry_category" >
+                            <button type="button" class="submit_btn dark_brown_bg" >카테고리</button>
                         </div>
-                    
-                        <div class="search_wrap">
-                            <select name="search_category" id="search_category">
-                                <option value="">아이디</option>
-                                <option value="">내용</option>
-                            </select>
-                            <input type="text" name="freeboard_search">
-                            <button class="submit_btn light_brown_bg"> 검색 </button>
+
+                        <div class="search_area">
+                        
+                            <div class="search_wrap">
+                                <select name="search_category" id="search_category">
+                                    <option value="">아이디</option>
+                                    <option value="">내용</option>
+                                </select>
+                                <input type="text" name="freeboard_search">
+                                <button class="submit_btn light_brown_bg"> 검색 </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 카테고리 숨김 -->
+                    <div class="worry_category_wrap hidden">
+                        <div class="worry_category">
+
+                            <div class="check_box_wrap">
+                                <label for="normal" class="dark-brown dark_brown_border"> 
+                                    일반고민
+                                    <input type="radio" id="normal" name="worryCategory" value="normal">
+                                </label>
+                            </div>
+                            <div class="check_box_wrap">
+                                <label for="normal" class="dark-brown dark_brown_border"> 
+                                    일반고민
+                                    <input type="radio" id="normal" name="worryCategory" value="normal">
+                                </label>
+                            </div>
+                            <div class="check_box_wrap">
+                                <label for="normal" class="dark-brown dark_brown_border"> 
+                                    일반고민
+                                    <input type="radio" id="normal" name="worryCategory" value="normal">
+                                </label>
+                            </div>
+                            <div class="check_box_wrap">
+                                <label for="normal" class="dark-brown dark_brown_border"> 
+                                    일반고민
+                                    <input type="radio" id="normal" name="worryCategory" value="normal">
+                                </label>
+                            </div>
+                            <div class="check_box_wrap">
+                                <label for="normal" class="dark-brown dark_brown_border"> 
+                                    일반고민
+                                    <input type="radio" id="normal" name="worryCategory" value="normal">
+                                </label>
+                            </div>
+                            <div class="check_box_wrap">
+                                <label for="normal" class="dark-brown dark_brown_border"> 
+                                    일반고민
+                                    <input type="radio" id="normal" name="worryCategory" value="normal">
+                                </label>
+                            </div>
+                            <div class="check_box_wrap">
+                                <label for="normal" class="dark-brown dark_brown_border"> 
+                                    일반고민
+                                    <input type="radio" id="normal" name="worryCategory" value="normal">
+                                </label>
+                            </div>
+                            
                         </div>
                     </div>
 
@@ -183,9 +233,7 @@
                                                 <input type="radio" id="normal" name="worryCategory" value="normal">
                                             </label>
                                         </div>
-
                                         
-
                                     </div>
                                 </div>
 
@@ -227,6 +275,7 @@
                         </div>
                     </div>
                 </form>
+
                 <article id="free_borad_wrap">
 
                     <!-- 게시판 리스트 -->
@@ -234,6 +283,7 @@
 
                             <!-- 게시판 하나 시작  -->
                             <div class="board_list_content">
+                                <a href="">
                                 <!-- 프로필 시작 -->
                                 <div class="board_flex_wrap">
                                     <div class="writer_pic_wrap">
@@ -273,6 +323,7 @@
                                         <p>2</p>
                                     </div>
                                 </div>
+                                </a>
                             </div>
 
                     </div>
