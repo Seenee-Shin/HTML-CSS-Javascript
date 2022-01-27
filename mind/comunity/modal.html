@@ -6,21 +6,18 @@
     <title></title>
     <link rel="stylesheet" type="text/css" href="../common.css">
     <link rel="stylesheet" type="text/css" href="css/comunity_free_list.css">
-
+    <script src="https://kit.fontawesome.com/5e0a99db98.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- 모달창 -->
-    <div class="modal_black_bg"></div>
-    <div class="modal_warp" style="width: 100%; height:100%; border: 1px;">
+    <!-- 모바일 글쓰기 모달창 -->
+    <div class="modal_warp">
         <div class="modal">
             <article id="m_free_borad_wrap">
                 <!-- 글작성 -->
                 <div class="m_board_write_warp " >
                     <div id="m_free_board_write">
-                        <div class="m_backBtn">
-                            <i class="fas fa-arrow-left"></i>
-                        </div>
-                        <div class="m_writer_wrap">
+                        <i id="closeModal" class="fas fa-times"></i>
+                        <div class="writer_wrap">
                             <div class="writer_pic light_brown_bg" style="background-image: url();">
                             </div>
                             <div>
@@ -28,24 +25,46 @@
                             </div>
                         </div>
                         <div class="m_writing">
-                            <textarea name="" id="" rows="5" placeholder="무슨일이 있었나요?"></textarea>
+                            <textarea name="writePost" id="" rows="5" placeholder="무슨일이 있었나요?"></textarea>
                         </div>
                     </div>
                     
                     <div class="m_write_option_area">
-                        <button type="button" id="comment" class="option_btn light_brown_bg">댓글 허용</button>
-                        <button type="button" id="scrap" class="option_btn light_brown_bg">스크랩 허용</button>
-                        <button type="button" id="like" class="option_btn light_brown_bg">공감 허용</button>
+
+                        <div class="write_option_area">
+                            <div class="check_box_wrap">
+                                <label for="comment" class="light_brown_bg">댓글허용
+                                    <input type="checkbox" id="comment">
+                                </label>
+                            </div>
+
+                            <div class="check_box_wrap">
+                                <label for="scrap" class="light_brown_bg">스크랩허용
+                                    <input type="checkbox" id="scarp">
+                                    
+                                </label>
+                            </div>
+                            
+                            <div class="check_box_wrap">
+                                <label for="like" class="light_brown_bg"> 공감 허용
+                                    <input type="checkbox" id="like">
+
+                                </label>
+                            </div>
                     </div>
                     
                     <hr>
-                    <div class="m_btn_area">
+
+                    <div class="m_submit_btn_wrap">
                         <a>
                             <i class="fas fa-image dark-brown"></i>
                         </a>
-                        <button class="submit_btn light_brown_bg">작성</button>
-                        
-                        <button class="submit_btn dark_brown_bg"  button type="button" onclick="">취소</button>
+
+                        <div class="m_btn_area">
+                            <button class="submit_btn light_brown_bg">작성</button>
+                            
+                            <button class="submit_btn dark_brown_bg"  button type="button" onclick="">취소</button>
+                        </div>
                     </div>
                 </div>
 

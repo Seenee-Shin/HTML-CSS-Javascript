@@ -1,7 +1,8 @@
 /* 모달창 열기 */
 
-const openBtn = document.querySelector("#openModal")
+const openBtn = document.querySelector(".openModal")
 const modal =  document.querySelector(".modal")
+
 const openModal = ()=>{
     modal.classList.remove("hidden")
 }

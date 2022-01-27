@@ -309,4 +309,81 @@ display: inline-block;
     footer{
         display: none;
     }
+
+
+    /* 글작성 모달 */
+    .modal{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 95%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+        
+    #m_free_borad_wrap{
+        width: 100%;
+        top: 0px;
+        position: relative;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    }
+
+    .m_board_write_warp{
+        margin: 10px;
+    }
+    #m_free_board_write>.writer_wrap{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 10px;
+    }
+
+    #m_free_board_write>.writer_wrap>.writer_pic {
+        margin: 0px;
+    }
+
+    #m_free_board_write>.writer_wrap>div:nth-child(2){
+        margin-left: 10px;
+    }
+    
+    .m_write_option_area>.write_option_area{
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 0px;
+    }
+
+    .m_writing>textarea{
+        width: 100%;
+        border: 0px;
+        padding: 5px;
+        height: 50vh;
+    }
+
+    #closeModal{
+        display: block;
+        text-align: right;
+        font-size: 25px;
+        margin-top: 20px;
+        margin-right: 10px;
+    }
+
+    .m_submit_btn_wrap{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px;
+    }
+
+    .m_submit_btn_wrap >a> i{
+        font-size: 25px;
+
+    }
+    .m_btn_area>.submit_btn {
+        width: 100px;
+        height: 30px;
+    }
 }
