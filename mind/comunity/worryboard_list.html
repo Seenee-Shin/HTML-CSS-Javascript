@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-    <link rel="stylesheet" type="text/css" href="../common.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
     <link rel="stylesheet" type="text/css" href="css/comunity_worry_list.css">
     <!-- 아이콘 -->
     <script src="https://kit.fontawesome.com/5e0a99db98.js" crossorigin="anonymous"></script>
@@ -107,14 +107,15 @@
                 <div  class="comunity_title">
                     <h3>고민을 나눠보면 어떨까요?</h3>
                     <p> 회원분들과 전문가분들이 여러분을 도와주실거에요.</p>
-                    <button class="openModal" class="submit_btn"> 고민 작성하기 </button>
+                    <button id="openModal" class="submit_btn"> 고민 작성하기 </button>
                 </div>
                 
 
                 <form action="/list" method="post" onsubmit="return ostingValidate()">
                     <div class="worry_top_wrap">
                         <div class="worry_category" >
-                            <button type="button" class="submit_btn dark_brown_bg" >카테고리</button>
+                            <button type="button" class="submit_btn dark_brown_bg" id="worryCategoryBtn" >카테고리</button>
+                            <button type="button" class="submit_btn light_brown_bg" id="proBtn" >전문가 답변</button>
                         </div>
 
                         <div class="search_area">

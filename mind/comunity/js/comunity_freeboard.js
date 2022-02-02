@@ -1,11 +1,16 @@
-const write = document.querySelector("#free_board_write")
+
+/* 모바일 글작성 모달 */
+const write = document.querySelector("#free_borad_wrap")
 const writing = document.querySelector("#post_textarea")
+const mPosting = document.querySelector(".posting_modal_warp")
+const closeBtn = document.querySelector("#closeModal")
 
 const openModal = ()=>{
-    modal.classList.remove("hidden")
+    mPosting.classList.remove("hidden")
+    console.log("openmodal")
 }
 const closeModal = ()=>{
-    modal.classList.add("hidden")
+    mPosting.classList.add("hidden")
 }
 
 window.onresize = function(){
@@ -13,13 +18,24 @@ window.onresize = function(){
     var innerHeight = window.innerHeight;
     
     if(innerWidth <= 768){
-        writing.value = ""
         writing.readOnly=true
+        writing.value = ""
+        writing.onclick = openModal
+        closeBtn.onclick = closeModal
+
     }else{
         writing.readOnly=false
-
+        mPosting.classList.add("hidden")
+        
     }
+
 }
 
-writing.addEventListener("onclick", openModal)
-writing.addEventListener("onclick", closeModal)
+
+
+
+/* 모바일 대댓글 토글 */
+const child = document.querySelectorAll(".comment_view child")
+
+
+

@@ -153,10 +153,12 @@ p{
 }
 
 
+/* 대댓글 토글  */
 
 
-
-
+.hidden{
+    display: none;
+}
 
 
 
@@ -209,4 +211,5 @@ p{
     .child{
         margin-left: 30px;
     }
+
 }
