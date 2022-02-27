@@ -5,23 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Momentum</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+  <div id="bg-grey"></div>
   <form id="login-form" class="hidden">
     <input type="text" placeholder="What is your name?" required maxlength="15">
     <button>Log In</button>
   </form>
 
-  <h1 id="greeting" class="hidden"></h1>
   <h2 id = clock></h2>
+  <h1 id="greeting" class="hidden"></h1>
 
   <div id="quotes">
     <span></span>
     <span></span>
   </div>
-
+  <div id="blackBg"></div>
   <script src="js/greeting.js"></script>
   <script src="js/clock.js"></script>
+  <script src="js/quotes.js"></script>
+  <script src="js/backgroud.js"></script>
 </body>
 </html>

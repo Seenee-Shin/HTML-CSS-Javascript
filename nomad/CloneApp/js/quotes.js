@@ -21,7 +21,20 @@ const quotes = [
   }
 ]
 
-const quote = document.querySelector("#quotes span:frist-child")
+const quote = document.querySelector("#quotes span:first-child")
 const author = document.querySelector("#quotes span:last-child")
 
-console,console.log(());
+//Math.random() 0와1사이의 랜덤 숫자(소숫점)
+//Math.round() 반올림
+//Math.ceil() 올림
+//Math.floor() 내림
+
+//배열 길이만킁의 랜덤 정수 구하기 
+const index = Math.floor(Math.random()* quotes.length)
+
+// 랜덤으로 명언 구하기
+const printQuote = quotes[index];
+
+//화면출력
+quote.innerText = printQuote.quote;
+author.innerText = "- "+printQuote.author+" -";
