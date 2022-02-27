@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>re:mind 상담사 페이지</title>
+
+    <link rel="stylesheet" href="proPage.css">
+</head>
+<body>
+    <h1>상담사 등록 신청 </h1>
+
+    <form action="proRegister" method="post">
+        <div class="proWrap">
+            <div class="label">
+            아이디 
+            </div>
+            <input type="text" name="proId" id="proId" required> <br>
+
+            <div class="label">
+            비밀번호 
+            </div>
+            <input type="text" name="proPw" id="proPw" required> <br>
+
+            <div class="label">
+            비밀번호 확인 
+            </div>
+            <input type="text" name="proPwCheck" id="proPwCheck" required> <br>
+            
+            <div class="label"> 이름</div>
+            <input type="text" name="proName" id="proName" required> <br>
+
+            <div class="label">생년월일</div>
+            <input type="text" name="proBirth" id="proBirth" required> <br>
+            
+            <div class="label">성별</div>
+            <input type="radio" name="proBirth" id="proBirthF" value="f"><label for="proBirthF">여성</label>
+            <input type="radio" name="proBirth" id="proBirthM" value="m"> <label for="proBirthM">남성</label><br>
+
+            <div class="label">핸드폰 번호</div>
+            <input type="text" name="proPhone" id="proPhone" required> <br>
+            
+            <div class="label">이메일</div>
+            <input type="email" name="proEmail" id="proEmail" required><br>
+
+            <br>
+            <input type="checkbox" name="accept" id="accept" required>(필수) 서비스 이용 약관 및 개인정보 처리 이용방침에 동의 합니다. <br>
+            <br>
+            <br>
+            <br>
+        <button>로그인</button>
+        </div>
+    </form>
+</body>
+</html>
